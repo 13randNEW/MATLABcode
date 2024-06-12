@@ -1,6 +1,7 @@
 clc;
-initial_vel = 8:0.1:10;
-tar_dist = 1.5:0.1:6.5;
+close all;
+initial_vel = 13:0.1:16;
+tar_dist = 1.5:0.1:8;
 
 chart = zeros(length(initial_vel), length(tar_dist));
 n = length(initial_vel)* length(tar_dist);
@@ -24,7 +25,7 @@ for i = 1:length(tar_dist)
 end
 
 figure
-f = fit([ s_vel, s_dist], s_result, 'poly44')
+f = fit([ s_vel, s_dist], s_result, 'poly33')
 plot(f, [s_vel, s_dist], s_result)
 
 for s = 1:(m-1)
